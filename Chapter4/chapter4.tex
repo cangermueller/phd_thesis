@@ -1,0 +1,59 @@
+%!TEX root = ../thesis.tex
+%*******************************************************************************
+%****************************** Third Chapter **********************************
+%*******************************************************************************
+\chapter{Deep neural networks for predicting DNA methylation}
+
+% **************************** Define Graphics Path **************************
+\ifpdf
+    \graphicspath{{Chapter4/Figs/Raster/}{Chapter4/Figs/PDF/}{Chapter4/Figs/}}
+\else
+    \graphicspath{{Chapter4/Figs/Vector/}{Chapter4/Figs/}}
+\fi
+
+\section{Motivation}
+
+\section{Existing methods and limitations}
+
+\section{DeepCpG model architecture}
+
+\subsection{DNA module}
+
+\begin{align}
+  a_{nfi}=\operatorname{ReLU}(\sum_{l=1}^L \sum_{d=1}^D w_{fld} s_{n,i+l,d})
+\end{align}
+
+\begin{align}
+  p_{nfi}=\max_{|k|<P/2}(a_{nf,i+k})
+\end{align}
+
+
+\subsection{CpG module}
+
+\begin{align}
+  \bar{x}_t=\operatorname{ReLU} (W x_t + b)
+\end{align}
+
+\begin{align}
+  &r_t=\operatorname{sigmoid}(W_{lr} \bar{x}_t + W_{hr} h_{t-1} + b_{r}) \\
+  &u_t=\operatorname{sigmoid}(W_{lu} \bar{x}_t + W_{hu} h_{t-1} + b_{u}) \\
+  &\tilde{h}_t=\operatorname{tanh}\left(W_{l\tilde{h}} \bar{x}_t + W_{h\tilde{h}}(r_t \odot h_{t-1}) + b_{\tilde{h}}\right) \\
+  &h_t = (1 - u_t) \odot h_{t-1} + u_t \odot \tilde{h}_t
+\end{align}
+
+
+\subsection{Fusion module}
+
+\begin{align}
+  \hat{y}_{nt}=\operatorname{sigmoid}(x)=\frac{1}{1+e^{-x}}
+\end{align}
+
+
+\subsection{Model training}
+
+\begin{align}
+  L(w)=\sum_{n=1}^N \sum_{t=1}^T o_{nt}\left[y_{nt} \log(\hat{y}_{nt}) + (1-y_{nt}) \log(1-\hat{y}_{nt})\right]
+\end{align}
+
+
+\section{Prediction performance evaluation}

@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,numbered,print,index,chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -101,7 +101,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- \includeonly{Chapter3/chapter3}
+ \includeonly{Chapter4/chapter4}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -127,7 +127,7 @@
 % \printnomenclature[space] space can be set as 2em between symbol and description
 %\printnomenclature[3em]
 
-\printnomenclature
+% \printnomenclature
 
 % ******************************** Main Matter *********************************
 \mainmatter
@@ -135,11 +135,8 @@
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
-%\include{Chapter4/chapter4}
-%\include{Chapter5/chapter5}
-%\include{Chapter6/chapter6}
-%\include{Chapter7/chapter7}
-
+\include{Chapter4/chapter4}
+\include{Chapter5/chapter5}
 
 
 % ********************************** Back Matter *******************************
