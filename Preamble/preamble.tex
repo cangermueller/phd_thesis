@@ -54,8 +54,8 @@
 % Captions: This makes captions of figures use a boldfaced small font.
 %\RequirePackage[small,bf]{caption}
 
-\RequirePackage[labelsep=space,tableposition=top]{caption}
-\renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
+\RequirePackage[labelsep=space,tableposition=top,labelfont=bf]{caption}
+\renewcommand{\figurename}{Figure} %to support older versions of captions.sty
 
 
 % *************************** Graphics and figures *****************************
@@ -170,7 +170,7 @@
 %\SetDraftWMPosition{bottom}
 
 % Draft Version - default is v1.0
-%\SetDraftVersion{v1.1}
+\SetDraftVersion{v1.1}
 
 % Draft Text grayscale value (should be between 0-black and 1-white)
 % Default value is 0.75
@@ -180,12 +180,16 @@
 % ******************************** Todo Notes **********************************
 %% Uncomment the following lines to have todonotes.
 
-%\ifsetDraft
-%	\usepackage[colorinlistoftodos]{todonotes}
-%	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
-%\else
-%	\newcommand{\mynote}[1]{}
-%	\newcommand{\listoftodos}{}
-%\fi
+\ifsetDraft
+  \usepackage[colorinlistoftodos]{todonotes}
+  \newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
+\else
+  \newcommand{\mynote}[1]{}
+  \newcommand{\listoftodos}{}
+\fi
 
 % Example todo: \mynote{Hey! I have a note}
+
+
+% ********************** Uncommenting / ignoring text **************************
+\long\def\comment#1{}
