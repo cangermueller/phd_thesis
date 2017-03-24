@@ -1,0 +1,58 @@
+% \ifthenelse{\equal{#1}{A}}{\item[\textbf{Roman Symbols}]}{%
+% \ifthenelse{\equal{#1}{G}}{\item[\textbf{Greek Symbols}]}{%
+% \ifthenelse{\equal{#1}{Z}}{\item[\textbf{Acronyms / Abbreviations}]}{%
+% \ifthenelse{\equal{#1}{R}}{\item[\textbf{Superscripts}]}{%
+% \ifthenelse{\equal{#1}{S}}{\item[\textbf{Subscripts}]}{%
+% \ifthenelse{\equal{#1}{X}}{\item[\textbf{Other Symbols}]}
+
+\newcommand{\acro}[2]{\nomenclature[Z]{#1}{#2}}
+
+\acro{5mC}{five-methylcytosine}
+\acro{CGI}{CpG island}
+\acro{Dnmt}{DNA methyltransferase}
+\acro{SAM}{S-adenosyl-L-methionine}
+\acro{DNA}{deoxyribonucleic acid}
+\acro{RNA}{ribonucleic acid}
+\acro{miRNA}{micro RNA}
+\acro{IAP}{intracisternal A-particle}
+\acro{ESC}{embryonic stem cell}
+\acro{mESC}{mouse embryonic stem cell}
+\acro{LMR}{low methylated region}
+\acro{MRE}{methylation-sensitive restriction enzymes}
+\acro{MBD}{methyl-binding domain}
+\acro{MeDIP}{Methylated DNA immunoprecipitation}
+\acro{NGS}{next generation sequencing}
+\acro{BS-seq}{bisulfite sequencing}
+\acro{WGBS}{whole genome bisulfite sequencing}
+\acro{RRBS-seq}{reduced representation bisulfite sequencing}
+\acro{scRRBS-seq}{single-cell reduced representation bisulfite sequencing}
+\acro{scBS-seq}{single-cell bisulfite sequencing}
+\acro{scMT-seq}{single-cell methylome and transcriptome sequencing}
+\acro{PBAT}{post bisulfite adaptor tagging}
+\acro{QTL}{quantitative trait loci}
+\acro{mQTL}{methylation quantitative trait loci}
+\acro{SNV}{single-nucleotide variants}
+\acro{PC}{principal component}
+\acro{FDR}{false discovery rate}
+\acro{bp}{base pair}
+
+\acro{ANN}{artificial neural network}
+\acro{DNN}{deep neural network}
+\acro{MLP}{multilayer perceptron}
+\acro{CNN}{convolutional neural network}
+\acro{RNN}{recurrent neural network}
+\acro{LSTM}{long short-term memory}
+\acro{GRU}{gated recurrent unit}
+\acro{AE}{auto encoder}
+\acro{VAE}{variational auto encoder}
+\acro{RBM}{restricted Boltzmann machine}
+\acro{ReLU}{rectified linear unit}
+
+\acro{MII}{metaphase II oocytes}
+\acro{SC}{single cell}
+
+\acro{TFBS}{transcription factor binding sites}
+\acro{PWM}{position weight matrices}
+\acro{RF}{random forest}
+\acro{AUC}{area under the receiver operating characteristic curve}
+\acro{HCC}{hepatocellular carcinoma cell}

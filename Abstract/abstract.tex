@@ -1,5 +1,13 @@
 % ************************** Thesis Abstract *****************************
 % Use `abstract' as an option in the document class to print only the titlepage and the abstract.
 \begin{abstract}
-This is where you write your abstract ...
+Epigenetics is the study heritable changes in gene activity that are not associated with changes of the DNA sequence. DNA methylation of cytosine nucleotides is an epigenetic modification that has critical roles in the regulation and maintenance of cell type–specific transcriptional programs. Recent technological advances have enabled profiling DNA methylation at single-cell resolution and thereby studying DNA methylation variability between cells. However, current technologies are limited by high levels of technical noise and incomplete sequence coverage, which renders the analysis of single-cell methylation profiles challenging.
+
+This thesis contributes computational methods for the analysis of single-cell methylation data. First, we developed statistical methods for the genome-wide analysis of low-coverage single-cell methylation profiles. We applied these methods to mouse embryonic stem cells profiled using single-cell bisulfite sequencing, obtaining new insights into the variability of DNA methylation in different genomic contexts. Additionally, we considered cells profiled using parallel single-cell methylation and transcriptome sequencing, revealing regulatory associations between DNA methylation and gene expression at a genome-wide scale.
+
+Second, we developed DeepCpG, a deep neural network for imputing low-coverage single-cell methylation profiles and thereby facilitating the genome-wide analyses. We evaluated DeepCpG on single-cell methylation data from five cell types profiled using alternative sequencing protocols, demonstrating that DeepCpG is widely applicable and yields substantially more accurate predictions than previous methods.
+
+Third, we developed methods for analysing DNA methylation in single cells using DeepCpG. We show that our method enables discovering DNA sequence motifs that are associated with methylation states and cell-to-cell variability, and estimating the effect of single nucleotide mutations on DNA methylation.
+
+In summary, this thesis proposes deep neural networks and statistical models for analysing single-cell DNA methylation sequencing data and for studying intercellular differences.
 \end{abstract}

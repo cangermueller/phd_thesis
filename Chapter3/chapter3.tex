@@ -2,7 +2,7 @@
 %*******************************************************************************
 %****************************** Third Chapter **********************************
 %*******************************************************************************
-\chapter{Protocols and analysis of single-cell DNA methylation data}
+\chapter{Protocols and analysis of single-cell DNA methylation data} \label{sec:pro}
 
 % **************************** Define Graphics Path **************************
 \ifpdf
@@ -11,20 +11,36 @@
     \graphicspath{{Chapter3/Figs/Vector/}{Chapter3/Figs/}}
 \fi
 
-Our undestanding of DNA methylation has been revolutionized by the development of BS-seq, which offers single-cytosine resolution and absolute quantification of methyl-cytosine genome-wide. Recent advances have demonstrated the power of single-cell sequencing to deconvolve mixed cell populations~\citep{jain_supervised_2007,deng_single-cell_2014,macaulay_single_2014}. Incorporating epigenetic information into this single-cell arsenal will provide insights into epigenetic heterogeneity and transform our understanding of gene regulation.
+Our undestanding of DNA methylation has been revolutionized by the development of BS-seq, which offers single-cytosine resolution and absolute quantification of 5mC genome-wide. Recent advances have demonstrated the power of single-cell sequencing to deconvolve mixed cell populations~\citep{jain_supervised_2007,deng_single-cell_2014,macaulay_single_2014}. Incorporating epigenetic information into this single-cell arsenal will provide insights into epigenetic heterogeneity and transform our understanding of gene regulation.
 
-The first section of this chapter describes scBS-seq, a protocol for genome-wide profiling of DNA methylation in single cells, a statistical method to assess methylation heterogeneity between cells, and applications in embryonic stem cells. The work is based on \citet{smallwood_single-cell_2014}, which was joint work of Sebastien Smallwood, Heather Lee, Christof Angermueller, Felix Krueger, Heba Saadeh, Julian Peat, Simon Andrews, Oliver Stegle, and Wolf Reik.
+In the first section of this chapter, we will describe the scBS-seq protocol for genome-wide profiling of DNA methylation in single cells, a statistical method for quantifying methylation variability between cells, and applications to mouse ESCs. The work is based on \citet{smallwood_single-cell_2014}, which was joint work of Sebastien Smallwood, Heather Lee, Christof Angermueller, Felix Krueger, Heba Saadeh, Julian Peat, Simon Andrews, Oliver Stegle, and Wolf Reik.
 
 \begin{center}
 \begin{minipage}{.9\linewidth}
-\underline{Individual contributions}: Sebastien Smallwood and Heather Lee designed the study, prepared scBS-seq libraries, analyzed data and wrote the manuscript. Felix Krueger, Heba Saadeh, and Sebastien Smallwood performed sequence mapping and analyzed data. Julian Peat contributed to technical developments. Christof Angermueller and Oliver Stegle analysed the data.
+\underline{Individual contributions}: Sebastien Smallwood and Heather Lee designed the study, prepared scBS-seq libraries, analysed data and wrote the manuscript. Felix Krueger, Heba Saadeh, and Sebastien Smallwood performed sequence mapping and analysed data. Julian Peat contributed to technical developments. Christof Angermueller and Oliver Stegle analysed the data.
 \end{minipage}
 \end{center}
 
-The second section describes the scM\&T-seq protocol for parallel profiling of DNA methylation and gene expression in single cells, methods to quantify associations between DNA methylation and gene expression, and applications to mouse embryonic stem cells. The work is based on \citet{angermueller_parallel_2016}, which was joint work of Christof Angermueller, Stephen Clark, Heather Lee, Iain Macaulay, Mabel Teng, Tim Xiaoming Hu, Felix Krueger, Sebastien Smallwood, Chris Ponting, Thierry Voet, Gavin Kelsey, Oliver Stegle, and Wolf Reik.
+In the second section, we will describe the scM\&T-seq protocol for parallel profiling of DNA methylation and gene expression in single cells, methods for quantifying associations between DNA methylation and gene expression, and applications to mouse ESCs. The work is based on \citet{angermueller_parallel_2016}, which was joint work of Christof Angermueller, Stephen Clark, Heather Lee, Iain Macaulay, Mabel Teng, Tim Xiaoming Hu, Felix Krueger, Sebastien Smallwood, Chris Ponting, Thierry Voet, Gavin Kelsey, Oliver Stegle, and Wolf Reik.
 
 \begin{center}
 \begin{minipage}{.9\linewidth}
 \underline{Individual contributions}: Christof Angermueller performed all statistical analyses of the data. Heather Lee, Iain Macaulay, Stephen Clark, and Sebastien Smallwood developed the protocol and performed experiments. Heather Lee, Iain Macaulay, Christof Angermueller, Stephen Clark, Oliver Stegle, Wolf Reik, and Chris Ponting interpreted the results. Mabel Teng contributed to method development. Tim Xiaoming Hu processed RNA-seq data. Felix Krueger processed BS-seq data. Wolf Reik, Gavin Kelsey, Iain Macaula, and Thierry Voet contributed protocols and reagents. Heather Lee, Iain Macaulay, Wolf Reik, and Thierry Voet conceived the project.
 \end{minipage}
 \end{center}
+
+\input{./Chapter3/bs/main.tex}
+\input{./Chapter3/mt/main.tex}
+
+
+\section{Discussion}
+
+We have first presented scBS-seq for profiling DNA methylation in single cells and a statistical model for quantifying methylation heterogeneity in cell populations at a genome-wide scale. We demonstrated that our approach detects rare cell types in populations and identifies genomic regions with high methylation heterogeneity that are functionally important during cell differentiation.
+
+We further extended our protocol for parallel profiling of the methylome and transcriptome from the same single cell, allowing the relationship between DNA methylation and expression to be explored. We confirmed a negative association between non-CGI promoter methylation and transcription in single cells and identified both positive and negative associations at distal regulatory regions. We found the expression levels of many pluripotency factors, e.g. Esrrb, to be negatively associated with DNA methylation. Furthermore, we demonstrated that the strength of the connection between methylome and transcriptome can vary from cell to cell.
+
+We used principal component analysis to investigate the factors of variations of DNA methylation and gene expression. To better understand the relation between these factors and to distinguish between factors that drive variations either in DNA methylation or gene expression, future studies may consider advanced statistical methods such as canonical correlation analysis or collective matrix factorization.
+
+In our study, we only considered correlations between genes and genomic regions with a maximum genomic distance of 10~kbp. An important area of future research is to investigate trans-associations between DNA methylation and gene expression. For this, chromatin contact information from Hi-C experiments can be considered to identify distal genomic regions that are in close spatial proximity with a certain gene.
+
+We estimated mean methylation rates in genomic context by averaging and used weighted Pearson correlation to account for incomplete CpG coverage. More sophisticated methods to estimate the mean methylation rate in genomic context from low-coverage data may reveal stronger associations between DNA methylation and gene expression. These include methods for imputing CpG methylation in single cells, which will be discussed in the following chapter.

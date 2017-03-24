@@ -1,13 +1,13 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index,draft,chapter]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+% \documentclass[a4paper,12pt,times,numbered,print,index,draft,chapter]{Classes/PhDThesisPSnPDF}
 % abstact: only abstract
 % draft: draft version
 %  - change \SetDraftVersion{v1.1} in preamble.tex
 % chapter: selected chapter
 % Hyperlink colors: in Classes/PhDThesisPSnPDF.cls
-
 % ******************************************************************************
 % ******************************* Class Options ********************************
 % *********************** See README for more details **************************
@@ -106,7 +106,12 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- \includeonly{Chapter3/chapter3}
+  % \includeonly{Chapter1/chapter1}
+  % \includeonly{Chapter2/chapter2}
+  % \includeonly{Chapter3/chapter3, Chapter3/appendix}
+  % \includeonly{Chapter4/chapter4, Chapter4/appendix}
+  \includeonly{Chapter5/chapter5, Chapter5/appendix}
+  % \includeonly{Chapter6/chapter6}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -116,37 +121,53 @@
 
 \maketitle
 
-\include{Dedication/dedication}
+% \include{Dedication/dedication}
 \include{Declaration/declaration}
 \include{Acknowledgement/acknowledgement}
 \include{Abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
 
+
+\begin{singlespace}
 \tableofcontents
+\end{singlespace}
 
 \listoffigures
 
 \listoftables
 
-% \printnomenclature[space] space can be set as 2em between symbol and description
-%\printnomenclature[3em]
+% \printnomenclature[space] %space can be set as 2em between symbol and description
+% \printnomenclature[3em]
 
-% \printnomenclature
+\input{Nomenclature/nomenclature}
+\printnomenclature
 
 % ******************************** Main Matter *********************************
 \mainmatter
 
-% \include{Chapter1/chapter1}
+\include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
 \include{Chapter4/chapter4}
 \include{Chapter5/chapter5}
+\include{Chapter6/chapter6}
 
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
-%\backmatter
+% \backmatter
+
+% ********************************** Appendices ********************************
+
+\begin{appendices} % Using appendices environment for more functionality
+
+\include{Chapter3/appendix}
+\include{Chapter4/appendix}
+\include{Chapter5/appendix}
+% \include{Appendix/publications}
+
+\end{appendices}
 
 % ********************************** Bibliography ******************************
 \begin{spacing}{0.9}
@@ -171,15 +192,6 @@
 
 
 \end{spacing}
-
-% ********************************** Appendices ********************************
-
-\begin{appendices} % Using appendices environment for more functunality
-
-\include{Appendix1/appendix1}
-\include{Appendix2/appendix2}
-
-\end{appendices}
 
 % *************************************** Index ********************************
 \printthesisindex % If index is present
