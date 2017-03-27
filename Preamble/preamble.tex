@@ -114,15 +114,14 @@
 %\usepackage{cleveref} %Referencing without need to explicitly state fig /table
 
 % Add `custombib' in the document class option to use this section
-\ifuseCustomBib
-   \RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
+% \ifuseCustomBib
+%    \RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
 
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
-%\RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
-%\bibliography{References/references} %Location of references.bib only for biblatex
-
-\fi
+% \RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
+% \bibliography{References/references} %Location of references.bib only for biblatex
+% \fi
 
 % changes the default name `Bibliography` -> `References'
 \renewcommand{\bibname}{References}
@@ -203,4 +202,8 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 \usepackage[nameinlink,noabbrev]{cleveref}
+\creflabelformat{equation}{#2#1#3}
+% \creflabelformat{Equation}{#2#1#3}
+% \Crefformat{equation}{Equation #2#1#3}
+
 \newcommand{\FDR}{\operatorname{FDR}}

@@ -2,7 +2,6 @@
 % Please have a look at the README.md file for info on how to use the template
 
 \documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
-% \documentclass[a4paper,12pt,times,numbered,print,index,draft,chapter]{Classes/PhDThesisPSnPDF}
 % abstact: only abstract
 % draft: draft version
 %  - change \SetDraftVersion{v1.1} in preamble.tex
@@ -86,7 +85,7 @@
 \input{Preamble/preamble}
 
 % ************************ Thesis Information & Meta-data **********************
-% Thesis title and author information, refernce file for biblatex
+% Thesis title and author information, reference file for biblatex
 \input{thesis-info}
 
 % ***************************** Abstract Separate ******************************
@@ -178,9 +177,13 @@
 
 % \bibliographystyle{apalike}
 %\bibliographystyle{unsrt} % Use for unsorted references
+% plainnat
 \bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
-\bibliography{References/references} % Path to your References.bib file
+
+% \bibliography{References/references}
+% %s/journal = {arxiv[^}]*}/journal = {arXiv}/gi
+\bibliography{References/references_mod}
 
 
 % If you would like to use BibLaTeX for your references, pass `custombib' as

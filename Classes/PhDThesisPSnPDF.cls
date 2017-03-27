@@ -645,11 +645,11 @@ supported!}
     breaklinks=true,
     linktocpage,
     colorlinks=true,
-    linkcolor=blue,
-    anchorcolor=blue,
-    citecolor=blue,
-    filecolor=blue,
-    menucolor=blue
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black
   }
   \ifsetCustomMargin
   % Margin to be define in preamble using geometry package
@@ -686,7 +686,7 @@ supported!}
     linkcolor=blue,
     urlcolor=blue,
     citecolor=blue,
-    anchorcolor=green
+    anchorcolor=blue
   }
 
   \ifsetCustomMargin
