@@ -36,14 +36,14 @@ Next, we investigated the reproducibility and accuracy of scBS-seq. CpG sites in
 \begin{figure}[htbp!]
 \centering
 \includegraphics[width=1.0\textwidth]{concord}
-\caption[scBS-seq concordance and reproduction of bulk data.]{scBS-seq concordance and reproduction of bulk data. (a) Pairwise analysis of CpG concordance genome-wide and in unmethylated CGIs. Boxplots represent the interquartile range, with the median; whiskers correspond to 1.5 times the interquartile range. (b) Pairwise correlation CpG methylation levels between MII-merged and MII-bulk data.}
+\caption[CpG concordance and reproduction of bulk data.]{CpG concordance and reproduction of bulk data. (a) Pairwise analysis of CpG concordance genome-wide and in unmethylated CGIs. Boxplots represent the interquartile range, with the median; whiskers correspond to 1.5 times the interquartile range. (b) Pairwise correlation CpG methylation levels between MII-merged and MII-bulk data.}
 \label{fig:bs_concord}
 \end{figure}
 
 
 \subsection{Method for estimating DNA methylation variability} \label{sec:bs_method}
 
-The majority of CpG sites in single cells are either methylated or unmethylated. An exception is hemi-methylation, where the cytosine is methylated on only one DNA strand. Consistent with this, scBS-seq called CpG sites overwhelmingly methylated or unmethylated (\Cref{fig:bs_binary}). Since hemi-methylation is rare and currently hard to detect by scBS-seq owing to low CpG coverage, we did not consider hemi-methylation in our analysis. Instead, we modelled the methylation state of CpG sites in single-cells as a Bernoulli variable, and represented methylation profiles as a binary matrix (\Cref{fig:bs_binary}). As a consequence of the limited CpG coverage of only ${\approx}10-30\%$, the methylation state of most CpG sites is unobserved, which renders downstream analyses challenging. We therefore developed a method that aggregates information from adjacent CpG sites and estimates mean methylation levels as well as cell-to-cell heterogeneity for windows instead of single CpG sites. Our method yields uncertainty estimates, which is critical in regions of low CpG coverage. Our method is further computational efficient, thereby applicable genome-wide on over 20 million CpG sites.
+The majority of CpG sites in single cells are either methylated or unmethylated. An exception is hemimethylation, where the cytosine is methylated on only one DNA strand. Consistent with this, scBS-seq called CpG sites overwhelmingly methylated or unmethylated (\Cref{fig:bs_binary}). Since hemimethylation is rare and currently hard to detect by scBS-seq owing to low CpG coverage, we did not consider hemimethylation in our analysis. Instead, we modelled the methylation state of CpG sites in single-cells as a Bernoulli variable, and represented methylation profiles as a binary matrix (\Cref{fig:bs_binary}). As a consequence of the limited CpG coverage of only ${\approx}10-30\%$, the methylation state of most CpG sites is unobserved, which renders downstream analyses challenging. We therefore developed a method that aggregates information from adjacent CpG sites and estimates mean methylation levels as well as cell-to-cell heterogeneity for windows instead of single CpG sites. Our method yields uncertainty estimates, which is critical in regions of low CpG coverage. Our method is further computational efficient, thereby applicable genome-wide on over 20 million CpG sites.
 
 \begin{figure}[htbp!]
 \centering
@@ -146,7 +146,7 @@ We applied our method to estimate methylation rates in each ESC genome as well a
 \begin{figure}[htbp!]
 \centering
 \includegraphics[width=1.0\textwidth]{top300}
-\caption[Heatmap of top 300 most variable sites.]{Heatmap for methylation rates of the top 300 most variable sites among single-cell ESC samples. Cluster dendrograms for samples (left) and sites (top) are shown. The genome-wide average methylation rate is displayed in the left track (`all'). The main clusters of variable sites are indicated at the bottom.}
+\caption[Heatmap of 300 most variable sites.]{Heatmap for methylation rates of the 300 most variable sites among single-cell ESC samples. Cluster dendrograms for samples (left) and sites (top) are shown. The genome-wide average methylation rate is displayed in the left track (`all'). The main clusters of variable sites are indicated at the bottom.}
 \label{fig:bs_top300}
 \end{figure}
 

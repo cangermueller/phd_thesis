@@ -33,7 +33,7 @@ $w_i$ are linear weights that are highest close the centre position ($i=0.5W$) o
 \begin{figure}[htbp!]
 \centering
 \includegraphics[width=0.8\textwidth]{motifs_act}
-\caption[Principal component analysis of discovered DNA sequence motifs.]{Principal component analysis of discovered DNA sequence motifs. Clustering of 128 motifs discovered by DeepCpG. Shown are the first two principal components of the motif occurrence frequencies in sequence windows (activity). Triangles denote motifs with significant ($\FDR<0.05$) similarity to annotated motif in the CIS-BP or UniPROPE database. Marker size indicates the average activity; the estimated motif effect on methylation level is shown in colour. Sequence logos are shown for representative motifs with larger effects, including 10 annotated motifs.}
+\caption[Activity of DNA sequence motifs in genomic contexts.]{Activity of DNA sequence motifs in genomic contexts. Rank of motif activities in different genomic contexts on test chromosomes. The highest activity of CG rich motifs is observed in GC-rich regions such as promotors and CpG islands (CGI). Conversely, the highest activity of AT rich motifs is observed in GC-poor regions such as intergenic or active enhancer regions.}
 \label{fig:dcpg_motifs_act}
 \end{figure}
 
@@ -118,7 +118,7 @@ Here, the first term is the first-order gradient of $\hat{y}_n$ with respect to 
 \begin{figure}[htbp!]
 \centering
 \includegraphics[width=1.0\textwidth]{mut_qtl_zoom}
-\caption[Analysis and example visualization of estimated single nucleotide mutation effects for methylation QTLs.]{Analysis and example visualization of estimated single nucleotide mutation effects for methylation QTLs. (a) Distribution of the mutation effect for 2379 methylation QTLs (mQTL) variants from \citet{kaplow_pooling-based_2015}, compared to distance-matched random variants (non mQTL). (b) Visualization of mutation effects for an example CpG site and the corresponding mQTL. Shown are effects in a window centred on the example CpG site (chromosome 1; position 159791497). The position of the corresponding mQTL from \citet{kaplow_pooling-based_2015} (rs60205880; position 159791464) is indicated by the vertical red line. The heat map in the lower panels shows effect sizes for individual nucleotides, and line plot in the upper panel the maximum absolute effect across nucleotides.}
+\caption[Analysis and example visualization of estimated single nucleotide mutation effects for methylation QTLs (mQTLs).]{Analysis and example visualization of estimated single nucleotide mutation effects for methylation QTLs (mQTLs). (a) Distribution of the mutation effect for 2379 mQTLs variants from \citet{kaplow_pooling-based_2015}, compared to distance-matched random variants (non mQTL). (b) Visualization of mutation effects for an example CpG site and the corresponding mQTL. Shown are effects in a window centred on the example CpG site (chromosome 1; position 159791497). The position of the corresponding mQTL from \citet{kaplow_pooling-based_2015} (rs60205880; position 159791464) is indicated by the vertical red line. The heat map in the lower panels shows effect sizes for individual nucleotides, and line plot in the upper panel the maximum absolute effect across nucleotides.}
 \label{fig:dcpg_mut_qtl_zoom}
 \end{figure}
 

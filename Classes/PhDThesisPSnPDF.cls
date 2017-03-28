@@ -644,7 +644,7 @@ supported!}
     bookmarksnumbered=true,
     breaklinks=true,
     linktocpage,
-    colorlinks=true,
+    colorlinks=false,
     linkcolor=black,
     anchorcolor=black,
     citecolor=black,
